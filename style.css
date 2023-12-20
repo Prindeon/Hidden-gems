@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+/* global styling */
+:root {
+    --grey: #3C4043;
+    --white: #F0F4EF;
+    --orange: #DDA15E;
+    --hover-orange: #cc8a3f;
+    --green: #69995D;
+    --brown: #A44200;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    overflow: auto;
+}
+.primary-button {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--orange);
+    border-radius: 8px;
+    height: 50px;
+    min-width: 160px;
+    padding: 0 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    border-style: none;
+    cursor: pointer;
+    position: relative;
+}
+.primary-button:hover {
+    background-color: var(--hover-orange);
+}
+.primary-button a {
+    width: 100%;
+    height: 100%;
+}
+.spacer {
+    flex-grow: 9999;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex {
+    display: flex;
+}
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.right-margin {
+    margin-right: 111px;
+}
+.medium-img {
+    width: 588px;
+}
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 5em;
+    margin: 0;
+}
+h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3rem;
+    margin: 0;
+}
+p {
+    font-weight: 300;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.centered {
+    text-align: center;
+}
+.right-margin {
+    margin-right: 70px;
+}
+.border {
+    border-style: solid;
+    border-width: 1px;
+}
+.border-bottom {
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+a {
+    text-decoration: none;
+}
+.primary-button a {
+    color: var(--white);
+}
+
+/* navbar */
+nav {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;  
+}
+.logo {
+    width: 80px;
+    margin-right: 10px;
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.navbar-links li:not(:first-of-type) {
+    margin-left: 40px;
+}
+.navbar-link {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.active {
+    position: relative;
+    width: 100%;
+}
+.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+}
+/* underline when hovering */
+.navbar-link::before { 
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    background-color: black;
+}
+.navbar-link:hover::before {
+    width: 100%;
+}
+.nav-button {
+    display: block;
+    color: var(--white);
+    border-radius: 8px;
+    background-color: var(--orange);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+}
+.nav-button:hover {
+    background-color: var(--hover-orange);
+}
+
+/* Hero section */
+.landing-hero {
+    background-image: url(public/images/golden-hour-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1025px;
+}
+.landing-hero h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.landing-hero p {
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.landing-hero button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
+
+/* under the fold landing page */
+.under-the-fold {
+    margin: 100px 160px;
+}
+.what-is-fjordklyngen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 590px;
+    margin-right: 70px;
+}
+.what-is-fjordklyngen .primary-button {
+    margin-top: 20px;
+}
+.gangbro {
+    width: 100vw;
+}
+
+/* purpose of this site */
+.site-purpose {
+    margin: 100px 160px;
+}
+.site-purpose-content {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.site-purpose-content article {
+    margin-right: 70px;
+}
+
+/* location cards */
+.location-cards {
+    margin: 0;
+}
+.card {
+    border-radius: 24px;
+    overflow: auto;
+    margin: 0 160px;
+    margin-bottom: 50px;
+    height: 350px;
+}
+/* left side of cards - flex-shrink is vital to maintain consistant image width */
+.card-image-1, .card-image-2, .card-image-3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40%;
+    flex-shrink: 0;
+}
+.card-image-1 {
+    background-image: url(public/images/skals-bg.jpg);
+}
+.card-image-2 {
+    background-image: url(public/images/flensborg-skov.jpg);
+}
+.card-image-3 {
+    background-image: url(public/images/borup-hede.jpg);
+}
+/* right side of cards */
+.card-right {
+    margin: 30px 140px 20px 20px;
+}
+.card-right p {
+    margin: 0;
+}
+.location {
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.loc-pin {
+    width: 20px;
+    margin-right: 5px;
+}
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-facts {
+    font-weight: 800;
+    align-items: center;
+    margin: 0 10px;
+}
+.small-icon {
+    height: 39px;
+    width: 39px;
+}
+.facts-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-grow: 1;
+}
+.facts {
+    margin-bottom: 0;
+}
+
+
+/* All the trail subpages */
+.skals-bg {
+    background-image: url(public/images/skals-bg.jpg);
+    background-size: cover;
+    height: 633px;
+    background-repeat: no-repeat;
+}
+.flensborg-bg {
+    background-image: url(public/images/flensborg-skov.jpg);
+    background-size: cover;
+    height: 633px;
+    background-repeat: no-repeat;
+}
+.borup-bg {
+    background-image: url(public/images/borup-hede.jpg);
+    background-size: cover;
+    height: 633px;
+    background-repeat: no-repeat;
+}
+
+.skals-bg h1, .flensborg-bg h1, .borup-bg h1 {
+    margin-top: 330px;
+    margin-left: 160px;
+}
+.tagline {
+    margin-left: 160px;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.trail-header {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* breadcrumbs for navigations */
+.breadcrumbs {
+    padding: 0;
+    margin: 0;
+}
+.breadcrumbs a {
+    color: var(--green);
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs li {
+    margin-right: 5px;
+    display: inline;
+}
+.breadcrumbs li::after {
+    content: '->';
+    margin-left: 5px;
+    color: grey;
+}
+.breadcrumbs li:last-child::after {
+    content: '';
+}
+.breadcrumbs li:last-child {
+    font-weight: 700;
+}
+
+/* main section of trails */
+.trails-main {
+    margin-left: 160px;
+    margin-top: -1px;
+    display: flex;
+    flex-direction: row;
+}
+.trails-left-column {
+    width: 700px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+.trails-left-column h2 {
+    margin-top: 40px;
+}
+.trails-info-box {
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+.map {
+    width: 500px;
+    height: 400px;
+}
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+.trail-fact-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+div.facts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.facts img {
+    margin-right: 20px;
+}
+.facts span {
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+/* fade in javascript */
+.fade-in-effect-x {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+}
+.fade-in-effect-y {
+    opacity: 0;
+    transform: translatey(50px);
+    transition: all 1s ease-out;
+}
+.fade-in-effect {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+}
+.logo-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(public/images/Bridge-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    width: 100%;
+    height: 100%;
+}
+
+/* trails.html styling */
+.trails-nav {
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+.trails-header {
+    margin: 20px 0 100px 0;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .medium-img {
+        width: 60%;
+    }
+    p {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .site-purpose {
+        margin: 100px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-purpose-content {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .site-purpose-content article {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+
+    .location-cards {
+        margin: 0px;
+    }
+    .card {
+        border-radius: 12px;
+        overflow: auto;
+        margin: 0 5px;
+        margin-bottom: 50px;
+        height: 400px;
+    }
+    .card-right {
+        margin: 20px;
+    }
+    .card-image-1, .card-image-2, .card-image-3 {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 00%;
+        flex-shrink: 0;
+    }
+    .card-bottom {
+        flex-direction: column-reverse;
+
+    }
+    .location {
+        justify-content: center;
+    }
+    .facts-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .card-facts {
+        margin: 0; 
+    }
+
+}
+
+
+
+
+
+
+
+
+ 
